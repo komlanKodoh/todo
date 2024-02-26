@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+}
+
+html,
+body {
+	height: 100%;
+	font-weight: 400;
+	overscroll-behavior-x: none;
+}
+
+body {
+	overscroll-behavior-x: none;
+}
+
+.separator {
+  width: 90%;
+  height: 2px;
+  margin: 0.5rem auto 0.5rem auto;
+  display: block;
+}
+
+.scroll-bar::-webkit-scrollbar {
+	width: 10px;
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+	-webkit-border-radius: 10px;
+	padding: 30px 3px;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border: 2px solid rgb(39 39 42);
+	background: rgb(112, 112, 112);
+}
