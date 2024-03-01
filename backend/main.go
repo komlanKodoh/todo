@@ -36,6 +36,8 @@ func main() {
 
 	router := gin.Default()
 
+	router.Static("/", "./static")
+
 	router.Use(CORSMiddleware())
 	router.POST("/api/todo/filter", api.CreateHandler(controller.GetTodos))
 	router.DELETE("/api/todo/:id", api.CreateHandler(controller.DeleteTodo))

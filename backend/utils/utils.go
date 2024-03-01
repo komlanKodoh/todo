@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"github.com/gin-gonic/gin"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 	"os"
@@ -10,6 +11,14 @@ import (
 func InitializeLogging() zerolog.Logger {
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 	return zerolog.New(os.Stdout).With().Timestamp().Logger()
+}
+
+func ConfigureGinMod() {
+	env := os.Getenv("ENVIRONMENT")
+
+	if env == "prod" {
+		gin.SetMode(gin.ReleaseMode)
+	}
 }
 
 func GetPortNumber() int {
